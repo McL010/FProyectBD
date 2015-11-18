@@ -68,8 +68,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DBClass\Agentes.cs" />
     <Compile Include="DBClass\Altas.cs" />
+    <Compile Include="DBClass\Ciudadanos.cs" />
     <Compile Include="DBClass\PrincipalFP.cs" />
+    <Compile Include="DBClass\Sanciones.cs" />
+    <Compile Include="DBClass\TipoSancion.cs" />
+    <Compile Include="DBClass\Vehiculos.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -79,6 +84,10 @@
     <Compile Include="Migrations\201511131650204_primero.cs" />
     <Compile Include="Migrations\201511131650204_primero.Designer.cs">
       <DependentUpon>201511131650204_primero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511181713260_Tablas.cs" />
+    <Compile Include="Migrations\201511181713260_Tablas.Designer.cs">
+      <DependentUpon>201511181713260_Tablas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -96,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201511131650204_primero.resx">
       <DependentUpon>201511131650204_primero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511181713260_Tablas.resx">
+      <DependentUpon>201511181713260_Tablas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
