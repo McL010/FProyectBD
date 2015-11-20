@@ -11,7 +11,7 @@ namespace FProyectBD.DBClass
     {
         [Key]
         public int IdC { get; set; }
-        public virtual int IdCV { get; set; }
+        public virtual string IdCV { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public string Ciudad { get; set; }

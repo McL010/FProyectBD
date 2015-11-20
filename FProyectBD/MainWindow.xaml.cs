@@ -24,5 +24,14 @@ namespace FProyectBD
         {
             InitializeComponent();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
+                Principal principal = new Principal();
+                principal.Show();
+                this.Close();
+            
+        }
     }
 }
