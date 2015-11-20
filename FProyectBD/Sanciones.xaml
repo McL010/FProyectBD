@@ -1,7 +1,7 @@
 ﻿<Window x:Class="FProyectBD.Sanciones"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Sanciones" Height="353" Width="348">
+        Title="Sanciones" Height="369" Width="601">
     <Grid>
         <Button Content="Regresar Menu Principal" HorizontalAlignment="Left" Margin="129,292,0,0" VerticalAlignment="Top" Width="137" Click="Button_Click_1"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="71"/>
@@ -19,6 +19,8 @@
         <Button Content="Enviar" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
         <Button Content="Borrar Solo Por ID" HorizontalAlignment="Left" Margin="111,253,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click_3"/>
         <Button Content="Editar" HorizontalAlignment="Left" Margin="240,253,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <DataGrid x:Name="DataSan" HorizontalAlignment="Left" Margin="314,32,0,0" VerticalAlignment="Top" Height="176" Width="269"/>
+        <Button Content="Consultar" HorizontalAlignment="Left" Margin="412,228,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
 
     </Grid>
 </Window>

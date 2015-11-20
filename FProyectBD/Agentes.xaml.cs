@@ -98,5 +98,14 @@ namespace FProyectBD
             }
             else { MessageBox.Show("Verifique ingresar los campos correctos"); }
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+           FProyectBD.DBClass.PrincipalFP db = new FProyectBD.DBClass.PrincipalFP();
+          
+            var temp= from s in db.Agentes
+                       select s;
+            DataAgente.ItemsSource=temp.ToList();
+        }
     }
 }
