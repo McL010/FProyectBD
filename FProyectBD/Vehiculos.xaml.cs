@@ -99,5 +99,33 @@ namespace FProyectBD
                        select s;
             DataVeh.ItemsSource = temp.ToList();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            PrincipalFP db = new PrincipalFP();
+
+            int idVe = Convert.ToInt32(Idv.Text);
+
+            var cons = from s in db.Vehiculos
+
+                       where s.IdV == idVe
+                       select s;
+            DataVeh.ItemsSource = cons.ToList();
+
+            var cons1 = db.Vehiculos.SingleOrDefault(s => s.IdV == idVe);
+            Mat.Text = cons1.Matricula;
+            Idc.Text = Convert.ToString(cons1.IdC);
+            Marc.Text = cons1.Marca;
+            Mod.Text = cons1.Modelo;
+            Tip.Text = cons1.Tipo;
+
+
+
+            
+
+
+
+
+        }
     }
 }

@@ -17,6 +17,7 @@
         <Button Content="Editar" HorizontalAlignment="Left" Margin="320,268,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
         <Button Content="Consultar" HorizontalAlignment="Left" Margin="524,268,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
         <DataGrid x:Name="DataTipSan" HorizontalAlignment="Left" Margin="488,64,0,0" VerticalAlignment="Top" Height="190" Width="344"/>
+        <Button Content="Buscar" HorizontalAlignment="Left" Margin="268,71,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
 
     </Grid>
 </Window>

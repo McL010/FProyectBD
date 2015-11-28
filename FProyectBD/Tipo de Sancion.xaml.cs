@@ -96,5 +96,24 @@ namespace FProyectBD
                        select s;
             DataTipSan.ItemsSource = temp.ToList();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            PrincipalFP db = new PrincipalFP();
+
+            int idTS = Convert.ToInt32(Itp.Text);
+
+            var cons = from s in db.TipoSancion
+
+                       where s.IdT == idTS
+                       select s;
+            DataTipSan.ItemsSource = cons.ToList();
+
+            var cons1 = db.TipoSancion.SingleOrDefault(s => s.IdT == idTS);
+            Ts.Text = Convert.ToString(cons1.TipoS);
+            Sanc.Text = cons1.Sancion;
+            Imp.Text = Convert.ToString(cons1.Importe);
+            
+        }
     }
   }

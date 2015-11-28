@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201511200413539_compir.Designer.cs">
       <DependentUpon>201511200413539_compir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511280303241_kesç.cs" />
+    <Compile Include="Migrations\201511280303241_kesç.Designer.cs">
+      <DependentUpon>201511280303241_kesç.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511280318075_adsd.cs" />
+    <Compile Include="Migrations\201511280318075_adsd.Designer.cs">
+      <DependentUpon>201511280318075_adsd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sanciones.xaml.cs">
       <DependentUpon>Sanciones.xaml</DependentUpon>
     </Compile>
@@ -166,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511200413539_compir.resx">
       <DependentUpon>201511200413539_compir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511280303241_kesç.resx">
+      <DependentUpon>201511280303241_kesç.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511280318075_adsd.resx">
+      <DependentUpon>201511280318075_adsd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

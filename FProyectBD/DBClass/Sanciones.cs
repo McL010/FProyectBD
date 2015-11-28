@@ -19,5 +19,7 @@ namespace FProyectBD.DBClass
         public virtual ICollection<Vehiculos> Vehiculos { get; set; }
         public virtual ICollection<TipoSancion> TipoSanciones { get; set; }
         public virtual ICollection<Agentes> Agentes { get; set; }
+        
+        
     }
 }

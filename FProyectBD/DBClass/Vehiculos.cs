@@ -17,6 +17,7 @@ namespace FProyectBD.DBClass
         public string Modelo { get; set; }
         public string Tipo { get; set; }
         public virtual ICollection<Ciudadanos> Ciudadanos { get; set; }
+        public virtual ICollection<Sanciones> Sanciones { get; set; }
 
     }
 }

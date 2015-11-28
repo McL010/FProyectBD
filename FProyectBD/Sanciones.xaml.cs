@@ -99,5 +99,26 @@ namespace FProyectBD
                        select s;
             DataSan.ItemsSource = temp.ToList();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            PrincipalFP db = new PrincipalFP();
+
+            int idSan =Convert.ToInt32(IdS.Text);
+
+            var cons = from s in db.Sanciones
+
+                       where s.IdS == idSan
+                       select s;
+            DataSan.ItemsSource = cons.ToList();
+
+            var cons1 = db.Sanciones.SingleOrDefault(s => s.IdS == idSan);
+            Fec.Text = cons1.Fecha;
+            Lug.Text = cons1.Lugar;
+            TipS.Text = Convert.ToString(cons1.TipoS);
+            NAgente.Text = Convert.ToString(cons1.NAgente);
+            Mat.Text =cons1.Matricula;
+
+        }
     }
 }
