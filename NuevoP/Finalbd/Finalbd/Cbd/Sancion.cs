@@ -11,7 +11,7 @@ namespace Finalbd.Cbd
     {
         [Key]
         public int IdS { get; set; }
-        public virtual int Precio { get; set; }
+        public int Precio { get; set; }
         public virtual int IDAuto { get; set; }
         public virtual int IDCiudadano { get; set; }
         public virtual int IDAgente { get; set; }

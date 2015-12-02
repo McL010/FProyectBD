@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Finalbd.Cbd
 {
-    class Auto
+   public class Auto
     {
 
         [Key] public int IDAuto { get; set; }

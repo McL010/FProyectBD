@@ -11,16 +11,16 @@ namespace Finalbd.Cbd
    public class Ciudadano
     {
 
-       //public class Ciudadano(){
+       public Ciudadano(){
        
-       //this.Ciudadano = new ICollection<Ciudadano>();
+       this.Sanciones = new List<Sancion>();
        
-       //}
+       }
 
         [Key] public int IDCiudadano { get; set; }
         public  string Nombre { get; set; }
         public string sexo { get; set; }
-        public virtual ICollection<Sancion> Sanciones { get; set; }
+        public virtual List<Sancion> Sanciones { get; set; }
 
 
 
