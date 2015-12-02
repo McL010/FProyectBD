@@ -53,6 +53,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Button Content="Reporte" HorizontalAlignment="Left" Margin="224,186,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
 
     </Grid>
 </Window>

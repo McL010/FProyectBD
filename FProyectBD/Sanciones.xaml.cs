@@ -37,11 +37,12 @@ namespace FProyectBD
         {
             PrincipalFP db = new PrincipalFP();
             FProyectBD.DBClass.Sanciones sanc = new FProyectBD.DBClass.Sanciones();
-            sanc.Fecha = Fec.Text;
+            sanc.Fecha = Convert.ToString(Fec.SelectedDate.Value);
             sanc.Lugar = Lug.Text;
             sanc.TipoS = int.Parse(TipS.Text);
             sanc.NAgente= int.Parse(NAgente.Text);
             sanc.Matricula = Mat.Text;
+            sanc.importeS = int.Parse(imp.Text);
 
             db.Sanciones.Add(sanc);
             db.SaveChanges();

@@ -65,6 +65,7 @@
     <Compile Include="Ciudadanos.xaml.cs">
       <DependentUpon>Ciudadanos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DBClass\reporte.cs" />
     <Compile Include="Migrations\201511200413539_compir.cs" />
     <Compile Include="Migrations\201511200413539_compir.Designer.cs">
       <DependentUpon>201511200413539_compir.cs</DependentUpon>
@@ -76,6 +77,21 @@
     <Compile Include="Migrations\201511280318075_adsd.cs" />
     <Compile Include="Migrations\201511280318075_adsd.Designer.cs">
       <DependentUpon>201511280318075_adsd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512012058552_addimportesanciones.cs" />
+    <Compile Include="Migrations\201512012058552_addimportesanciones.Designer.cs">
+      <DependentUpon>201512012058552_addimportesanciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512012106086_acambiarimport.cs" />
+    <Compile Include="Migrations\201512012106086_acambiarimport.Designer.cs">
+      <DependentUpon>201512012106086_acambiarimport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512012304075_dada.cs" />
+    <Compile Include="Migrations\201512012304075_dada.Designer.cs">
+      <DependentUpon>201512012304075_dada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte.xaml.cs">
+      <DependentUpon>Reporte.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sanciones.xaml.cs">
       <DependentUpon>Sanciones.xaml</DependentUpon>
@@ -117,6 +133,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Principal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reporte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,6 +201,15 @@
     <EmbeddedResource Include="Migrations\201511280318075_adsd.resx">
       <DependentUpon>201511280318075_adsd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512012058552_addimportesanciones.resx">
+      <DependentUpon>201512012058552_addimportesanciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512012106086_acambiarimport.resx">
+      <DependentUpon>201512012106086_acambiarimport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512012304075_dada.resx">
+      <DependentUpon>201512012304075_dada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -194,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lesly.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

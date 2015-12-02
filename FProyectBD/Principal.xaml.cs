@@ -58,5 +58,12 @@ namespace FProyectBD
             TDS.Show();
             this.Close();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Reporte report = new Reporte();
+            report.Show();
+            this.Close();
+        }
     }
 }

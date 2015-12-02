@@ -107,5 +107,25 @@ namespace FProyectBD
                        select s;
             DataAgente.ItemsSource=temp.ToList();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            PrincipalFP db = new PrincipalFP();
+
+            int idAgen = Convert.ToInt32(IdAgen.Text);
+
+            var cons = from s in db.Agentes
+
+                       where s.IdAgente == idAgen
+                       select s;
+            DataAgente.ItemsSource = cons.ToList();
+
+            var cons1 = db.Agentes.SingleOrDefault(s => s.IdAgente == idAgen);
+            NAgent.Text = Convert.ToString(cons1.NAgente);
+            Nombre.Text = cons1.Nombre;
+            Ape.Text = cons1.Apellidos;
+            Carg.Text =cons1.Cargo;
+            Suel.Text = Convert.ToString(cons1.Sueldo);
+        }
     }
 }

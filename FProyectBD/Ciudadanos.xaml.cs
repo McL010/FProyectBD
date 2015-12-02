@@ -110,5 +110,28 @@ namespace FProyectBD
                        select s;
             DataCiu.ItemsSource = temp.ToList();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            PrincipalFP db = new PrincipalFP();
+
+            int idCi = Convert.ToInt32(IdC.Text);
+
+            var cons = from s in db.Ciudadanos
+
+                       where s.IdC == idCi
+                       select s;
+            DataCiu.ItemsSource = cons.ToList();
+
+            var cons1 = db.Ciudadanos.SingleOrDefault(s => s.IdC == idCi);
+            IdM.Text = cons1.IdCV;
+            Nom.Text = cons1.Nombre;
+            Direc1.Text = cons1.Direccion;
+            Ciu.Text = cons1.Ciudad;
+            Tel.Text = cons1.Telefono;
+
+
+            
+        }
     }
 }

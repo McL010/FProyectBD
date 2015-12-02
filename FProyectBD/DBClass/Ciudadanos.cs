@@ -16,7 +16,7 @@ namespace FProyectBD.DBClass
         public string Direccion { get; set; }
         public string Ciudad { get; set; }
         public string Telefono { get; set; }
-        public virtual ICollection<Sanciones> Sanciones { get; set; }
+        public virtual ICollection<reporte> Reportes { get; set; }
 
         
     }

@@ -14,6 +14,7 @@ namespace FProyectBD.DBClass
         public DbSet<Sanciones> Sanciones { get; set; }
         public DbSet<TipoSancion> TipoSancion { get; set; }
         public DbSet<Vehiculos> Vehiculos { get; set; }
+        public DbSet<reporte> Reportes { get; set; }
     }
     
     }

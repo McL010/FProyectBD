@@ -16,6 +16,7 @@ namespace FProyectBD.DBClass
         public int TipoS { get; set; }
         public int NAgente { get; set; }
         public string Matricula { get; set; }
+        public int importeS { get; set; }
         public virtual ICollection<Vehiculos> Vehiculos { get; set; }
         public virtual ICollection<TipoSancion> TipoSanciones { get; set; }
         public virtual ICollection<Agentes> Agentes { get; set; }
