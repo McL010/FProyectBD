@@ -28,7 +28,7 @@ namespace Finalbd
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(IdAU.Text, @"^\d+$") && Regex.IsMatch(Mar.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Mod.Text.Trim(), @"^[a-zA-Z\s]+$")&& Regex.IsMatch(Plac.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            if (Regex.IsMatch(Mar.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Mod.Text.Trim(), @"^[a-zA-Z\s]+$")&& Regex.IsMatch(Plac.Text.Trim(), @"^[a-zA-Z\s]+$"))
             {
                 Mibd db = new Mibd();
                 Finalbd.Cbd.Auto aut = new Finalbd.Cbd.Auto();
@@ -62,7 +62,7 @@ namespace Finalbd
                     db.SaveChanges();
                 }
             }
-            else { MessageBox.Show("Solo numeros #id"); }
+            else { MessageBox.Show("Solo numeros #id, Verifique los datos"); }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -91,7 +91,7 @@ namespace Finalbd
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(IdAU.Text, @"^\d+$") && Regex.IsMatch(Mar.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Mod.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Plac.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            if (Regex.IsMatch(IdAU.Text, @"^\d+$"))
             {
                 Mibd db = new Mibd();
 

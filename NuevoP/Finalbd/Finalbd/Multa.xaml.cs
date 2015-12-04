@@ -28,19 +28,23 @@ namespace Finalbd
 
         private void Alta_Click(object sender, RoutedEventArgs e)
         {
-            Mibd  db= new Mibd();
-            Finalbd.Cbd.Multa mul = new Finalbd.Cbd.Multa();
-            mul.Descripcion = Desc.Text;
-            
+            if (Regex.IsMatch(Desc.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
+                Finalbd.Cbd.Multa mul = new Finalbd.Cbd.Multa();
+                mul.Descripcion = Desc.Text;
 
 
-            db.Mults.Add(mul);
-            db.SaveChanges();
+
+                db.Mults.Add(mul);
+                db.SaveChanges();
+            }
+            else { MessageBox.Show("Ingrese los datos correctos, Solo Letras"); }
         }
 
         private void Baja_Click(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(IdM.Text, @"^\d+$"))
+            if (Regex.IsMatch(IdM.Text.Trim(), @"^\d+$"))
             {
                 Mibd db = new Mibd();
                 int id = int.Parse(IdM.Text);
@@ -55,7 +59,7 @@ namespace Finalbd
                     db.SaveChanges();
                 }
             }
-            else { MessageBox.Show("Solo numeros #id"); }
+            else { MessageBox.Show("Solo numeros en #id"); }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -67,9 +71,9 @@ namespace Finalbd
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-             //if (Regex.IsMatch(Itp.Text, @"^\d+$") && Regex.IsMatch(Ts.Text, @"^\d+$") && Regex.IsMatch(Sanc.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(Imp.Text, @"^\d+$"))
-            //{
-                Mibd  db = new Mibd();
+            if (Regex.IsMatch(IdM.Text.Trim(), @"^\d+$") && Regex.IsMatch(Desc.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
                 int id = int.Parse(IdM.Text);
                 var tisa = db.Mults
                           .SingleOrDefault(x => x.IDMulta == id);
@@ -78,30 +82,34 @@ namespace Finalbd
 
                 if (tisa != null)
                 {
-                    tisa.Descripcion= Desc.Text;
-                   
+                    tisa.Descripcion = Desc.Text;
+
                     db.SaveChanges();
                 }
-            //}
-            //else { MessageBox.Show("Verifique ingresar los campos correctos"); }
+            }
+            else { MessageBox.Show("Ingrese los Datos Correctamente"); }
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Mibd db = new Mibd();
+            if (Regex.IsMatch(IdM.Text.Trim(), @"^\d+$"))
+            {
+                Mibd db = new Mibd();
 
-            int id = Convert.ToInt32(IdM.Text);
+                int id = Convert.ToInt32(IdM.Text);
 
-            var cons = from s in db.Mults
+                var cons = from s in db.Mults
 
-                       where s.IDMulta == id
-                       select s;
-            DataM.ItemsSource = cons.ToList();
+                           where s.IDMulta == id
+                           select s;
+                DataM.ItemsSource = cons.ToList();
 
-            var cons1 = db.Mults.SingleOrDefault(s => s.IDMulta == id);
-            Desc.Text = cons1.Descripcion;
-            
-            
+                var cons1 = db.Mults.SingleOrDefault(s => s.IDMulta == id);
+                Desc.Text = cons1.Descripcion;
+
+            }
+            else { MessageBox.Show("Ingrese unicamente ID, Solo numeros"); }
         }
 
         private void Con_Click(object sender, RoutedEventArgs e)

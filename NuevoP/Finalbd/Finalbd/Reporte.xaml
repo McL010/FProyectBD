@@ -8,7 +8,7 @@
         <Button x:Name="Consultar" Content="Generar reporte" HorizontalAlignment="Left" Margin="308,225,0,0" VerticalAlignment="Top" Width="75" Click="Consultar_Click"/>
         <Button x:Name="Guardar" Content="Guardar" HorizontalAlignment="Left" Margin="429,225,0,0" VerticalAlignment="Top" Width="75" Click="Guardar_Click"/>
         <Button x:Name="meter" Content="Añadir " HorizontalAlignment="Left" Margin="38,225,0,0" VerticalAlignment="Top" Width="75" Click="meter_Click"/>
-        <TextBox x:Name="prec" HorizontalAlignment="Left" Height="23" Margin="178,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="prec" HorizontalAlignment="Left" Height="23" Margin="178,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="prec_TextChanged"/>
         <DatePicker x:Name="dp1" HorizontalAlignment="Left" Margin="178,53,0,0" VerticalAlignment="Top" Width="120" Focusable="False"/>
         <ComboBox x:Name="cbCiudadano" HorizontalAlignment="Left" Margin="178,109,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbAgente" HorizontalAlignment="Left" Margin="178,136,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbAgente_SelectionChanged"/>
@@ -23,6 +23,7 @@
         <ComboBox x:Name="Aut" HorizontalAlignment="Left" Margin="178,82,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbreport" HorizontalAlignment="Left" Margin="178,190,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="ID Repor" HorizontalAlignment="Left" Margin="98,188,0,0" VerticalAlignment="Top"/>
+        <Button Content="Regresar" HorizontalAlignment="Left" Margin="632,454,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

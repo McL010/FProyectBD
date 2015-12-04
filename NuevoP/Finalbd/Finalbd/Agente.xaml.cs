@@ -35,7 +35,7 @@ namespace Finalbd
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(IdA.Text, @"^\d+$") && Regex.IsMatch(NombreA.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Dep.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            if ( Regex.IsMatch(NombreA.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Dep.Text.Trim(), @"^[a-zA-Z\s]+$"))
             {
                 Mibd db = new Mibd();
                 Finalbd.Cbd.Agente agen = new Finalbd.Cbd.Agente();

@@ -28,16 +28,19 @@ namespace Finalbd
 
         private void Alta_Click(object sender, RoutedEventArgs e)
         {
+            if (Regex.IsMatch(NombreC.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Sexo.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
+                Finalbd.Cbd.Ciudadano ciu = new Finalbd.Cbd.Ciudadano();
+                ciu.Nombre = NombreC.Text;
+                ciu.sexo = Sexo.Text;
 
-            Mibd db = new Mibd();
-            Finalbd.Cbd.Ciudadano ciu = new Finalbd.Cbd.Ciudadano();
-            ciu.Nombre = NombreC.Text;
-            ciu.sexo = Sexo.Text;
 
 
-
-            db.Cius.Add(ciu);
-            db.SaveChanges();
+                db.Cius.Add(ciu);
+                db.SaveChanges();
+            }
+            else { MessageBox.Show("Verifique los datos, solo letras"); }
         }
 
         private void Baja_Click(object sender, RoutedEventArgs e)
@@ -62,9 +65,9 @@ namespace Finalbd
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            //if (Regex.IsMatch(Itp.Text, @"^\d+$") && Regex.IsMatch(Ts.Text, @"^\d+$") && Regex.IsMatch(Sanc.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(Imp.Text, @"^\d+$"))
-            //{
-                Mibd  db = new Mibd();
+            if (Regex.IsMatch(NombreC.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Sexo.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
                 int id = int.Parse(IdC1.Text);
                 var tisa = db.Cius
                           .SingleOrDefault(x => x.IDCiudadano == id);
@@ -77,24 +80,32 @@ namespace Finalbd
                     tisa.sexo = Sexo.Text;
                     db.SaveChanges();
                 }
+            }
+            else { MessageBox.Show("Ingrese Correctamente los datos, Letras unicamente"); }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Mibd db = new Mibd();
+            if (Regex.IsMatch(IdC1.Text.Trim(), @"^\d+$"))
+            {
+                Mibd db = new Mibd();
 
-            int id = Convert.ToInt32(IdC1.Text);
+                int id = Convert.ToInt32(IdC1.Text);
+                {
+                    var cons = from s in db.Cius
 
-            var cons = from s in db.Cius
+                               where s.IDCiudadano == id
+                               select s;
+                    DataCiu.ItemsSource = cons.ToList();
 
-                       where s.IDCiudadano == id
-                       select s;
-            DataCiu.ItemsSource = cons.ToList();
+                    var cons1 = db.Cius.SingleOrDefault(s => s.IDCiudadano == id);
+                    NombreC.Text = cons1.Nombre;
+                    Sexo.Text = cons1.sexo;
+                }
+               
 
-            var cons1 = db.Cius.SingleOrDefault(s => s.IDCiudadano == id);
-            NombreC.Text = cons1.Nombre;
-            Sexo.Text = cons1.sexo;
-            
+            }
+            else {MessageBox.Show("Ingrese Numero En ID"); }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

@@ -219,6 +219,7 @@ namespace Finalbd
 
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
+
             Mibd db = new Mibd();
             Sancion sn = new Sancion();
 
@@ -249,6 +250,18 @@ namespace Finalbd
         private void cbAgente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void prec_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Menu men = new Menu();
+            men.Show();
+            this.Close();
         }
 
     }
