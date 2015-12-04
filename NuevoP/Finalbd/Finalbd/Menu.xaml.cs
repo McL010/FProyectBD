@@ -54,7 +54,7 @@ namespace Finalbd
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            Sancion san = new Sancion();
+            Reporte san = new Reporte();
             san.Show();
             this.Close();
         }

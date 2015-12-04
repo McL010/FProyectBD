@@ -76,11 +76,23 @@
     <Compile Include="Migrations\201512020552022_precionovirtual.Designer.cs">
       <DependentUpon>201512020552022_precionovirtual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512020805472_cale.cs" />
+    <Compile Include="Migrations\201512020805472_cale.Designer.cs">
+      <DependentUpon>201512020805472_cale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512020812582_cale2.cs" />
+    <Compile Include="Migrations\201512020812582_cale2.Designer.cs">
+      <DependentUpon>201512020812582_cale2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512020855191_asd.cs" />
+    <Compile Include="Migrations\201512020855191_asd.Designer.cs">
+      <DependentUpon>201512020855191_asd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Multa.xaml.cs">
       <DependentUpon>Multa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sancion.xaml.cs">
-      <DependentUpon>Sancion.xaml</DependentUpon>
+    <Compile Include="Reporte.xaml.cs">
+      <DependentUpon>Reporte.xaml</DependentUpon>
     </Compile>
     <Page Include="Agente.xaml">
       <SubType>Designer</SubType>
@@ -120,7 +132,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sancion.xaml">
+    <Page Include="Reporte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,6 +161,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512020552022_precionovirtual.resx">
       <DependentUpon>201512020552022_precionovirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512020805472_cale.resx">
+      <DependentUpon>201512020805472_cale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512020812582_cale2.resx">
+      <DependentUpon>201512020812582_cale2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512020855191_asd.resx">
+      <DependentUpon>201512020855191_asd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

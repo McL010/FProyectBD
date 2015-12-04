@@ -25,23 +25,37 @@ namespace Finalbd
         {
             InitializeComponent();
         }
+        private void CleanUp() {
+            IdA.Text = String.Empty;
+            NombreA.Text = String.Empty;
+            Dep.Text = String.Empty;
+        
+        
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Mibd db = new Mibd();
-            Finalbd.Cbd.Agente agen = new Finalbd.Cbd.Agente();
-            agen.Nombre = NombreA.Text;
-            agen.Departamento = Dep.Text;
+            if (Regex.IsMatch(IdA.Text, @"^\d+$") && Regex.IsMatch(NombreA.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Dep.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
+                Finalbd.Cbd.Agente agen = new Finalbd.Cbd.Agente();
+                agen.Nombre = NombreA.Text;
+                agen.Departamento = Dep.Text;
 
 
 
-            db.Agens.Add(agen);
-            db.SaveChanges();
+                db.Agens.Add(agen);
+                db.SaveChanges();
+                MessageBox.Show("Se Dieron de alta Los Datos Correctamente");
+                CleanUp();
+                
+            }
+            else { MessageBox.Show("Ingrese Solo Numero, solo Letras"); 
+            }
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(IdA.Text, @"^\d+$"))
+            if (Regex.IsMatch(IdA.Text.Trim(), @"^\d+$") && Regex.IsMatch(NombreA.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Dep.Text.Trim(), @"^[a-zA-Z\s]+$"))
             {
                 Mibd db = new Mibd();
                 int id = int.Parse(IdA.Text);
@@ -61,8 +75,8 @@ namespace Finalbd
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //if (Regex.IsMatch(Itp.Text, @"^\d+$") && Regex.IsMatch(Ts.Text, @"^\d+$") && Regex.IsMatch(Sanc.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(Imp.Text, @"^\d+$"))
-            //{
+            if (Regex.IsMatch(IdA.Text.Trim (), @"^\d+$") && Regex.IsMatch(NombreA.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Dep.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
             Mibd db = new Mibd();
             int id = int.Parse(IdA.Text);
             var agen = db.Agens
@@ -78,27 +92,32 @@ namespace Finalbd
 
                 db.SaveChanges();
             }
-            //}
-            //else { MessageBox.Show("Verifique ingresar los campos correctos"); }
+            }
+            else { MessageBox.Show("Verifique ingresar los campos correctos"); }
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Mibd db = new Mibd();
+            if (Regex.IsMatch(IdA.Text.Trim(), @"^\d+$"))
+            {
+                Mibd db = new Mibd();
 
-            int id = Convert.ToInt32(IdA.Text);
+                int id = Convert.ToInt32(IdA.Text);
 
-            var cons = from s in db.Agens
 
-                       where s.IDAgente== id
-                       select s;
-            DataA.ItemsSource = cons.ToList();
+                var cons = from s in db.Agens
 
-            var cons1 = db.Agens.SingleOrDefault(s => s.IDAgente == id);
-            NombreA.Text = cons1.Nombre;
-            Dep.Text = cons1.Departamento;
+                           where s.IDAgente == id
+                           select s;
+                DataA.ItemsSource = cons.ToList();
 
-            
+                var cons1 = db.Agens.SingleOrDefault(s => s.IDAgente == id);
+                NombreA.Text = cons1.Nombre;
+                Dep.Text = cons1.Departamento;
+
+
+            }
+            else { MessageBox.Show("Ingrese solo numeros positivos"); }
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)

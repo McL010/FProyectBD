@@ -9,8 +9,16 @@ namespace Finalbd.Cbd
 {
     public class Sancion
     {
-        [Key]
-        public int IdS { get; set; }
+
+        public Sancion() {
+
+            this.Ciudadanos = new List<Ciudadano>();
+        
+        
+        }
+
+
+        [Key] public int IdS { get; set; }
         public int Precio { get; set; }
         public virtual int IDAuto { get; set; }
         public virtual int IDCiudadano { get; set; }
@@ -19,6 +27,6 @@ namespace Finalbd.Cbd
         public DateTime Fec { get; set; }
 
 
-        public virtual ICollection<Ciudadano> Ciudadanos{ get; set; }
+        public virtual List<Ciudadano> Ciudadanos{ get; set; }
     }
 }

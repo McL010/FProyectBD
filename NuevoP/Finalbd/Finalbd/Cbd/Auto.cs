@@ -10,7 +10,8 @@ namespace Finalbd.Cbd
    public class Auto
     {
 
-        [Key] public int IDAuto { get; set; }
+        [Key] 
+        public int IDAuto { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Placa { get; set; }

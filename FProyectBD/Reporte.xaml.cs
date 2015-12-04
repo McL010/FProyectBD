@@ -21,13 +21,13 @@ namespace FProyectBD
     public partial class Reporte : Window
     {
         //Temp varible to hold the last found item
-        private Sanciones tempSan = null;
+        private FProyectBD.Sanciones tempSan = null;
         //Array of Cart items 
-        private List<Sanciones> Query; 
+        private List<FProyectBD.Sanciones> Query; 
         public Reporte()
         {
             InitializeComponent();
-            Query = new List<Sanciones>();
+            Query = new List<FProyectBD.Sanciones>();
 
         }
 
@@ -79,13 +79,15 @@ namespace FProyectBD
             PrincipalFP db = new PrincipalFP();
             //parse the product code as int from the TextBox
             int id = int.Parse(Matr.Text);
+
+            
             //We query the database for the product
            FProyectBD.DBClass.Sanciones  m= db.Sanciones.SingleOrDefault(x => x.IdS == id);
-
+           tempSan = m;
             if (m != null) //if product was found
             {
                 //store in a temp variable (if user clicks on add we will need this for the Array)
-                tempSan= m;
+            //    tempSan= m;
                 //We display the product information on a label 
                 Total.Content = string.Format("ID: {0}, Name: {1}, Price: {2}, InStock (Qty): {3}", p.Id, p.Name, p.Price, p.Qty);
             }
