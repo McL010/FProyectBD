@@ -28,21 +28,26 @@ namespace Finalbd
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Mibd db = new Mibd();
-            Finalbd.Cbd.Auto aut = new Finalbd.Cbd.Auto();
-            aut.Marca = Mar.Text;
-            aut.Modelo = Mod.Text;
-            aut.Placa = Plac.Text;
+            if (Regex.IsMatch(IdAU.Text, @"^\d+$") && Regex.IsMatch(Mar.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Mod.Text.Trim(), @"^[a-zA-Z\s]+$")&& Regex.IsMatch(Plac.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
+                Finalbd.Cbd.Auto aut = new Finalbd.Cbd.Auto();
+                aut.Marca = Mar.Text;
+                aut.Modelo = Mod.Text;
+                aut.Placa = Plac.Text;
 
 
 
-            db.Auts.Add(aut);
-            db.SaveChanges();
+                db.Auts.Add(aut);
+                db.SaveChanges();
+            }
+            else { MessageBox.Show("Verifique los datos"); }
         }
+        
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(IdAU.Text, @"^\d+$"))
+            if (Regex.IsMatch(IdAU.Text.Trim(), @"^\d+$"))
             {
                 Mibd db = new Mibd();
                 int id = int.Parse(IdAU.Text);
@@ -62,42 +67,49 @@ namespace Finalbd
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //if (Regex.IsMatch(Itp.Text, @"^\d+$") && Regex.IsMatch(Ts.Text, @"^\d+$") && Regex.IsMatch(Sanc.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(Imp.Text, @"^\d+$"))
-            //{
-            Mibd db = new Mibd();
-            int id = int.Parse(IdAU.Text);
-            var tisa = db.Auts
-                      .SingleOrDefault(x => x.IDAuto == id);
-            // where x.id == id
-            //select x;
-
-            if (tisa != null)
+            if (Regex.IsMatch(IdAU.Text, @"^\d+$") && Regex.IsMatch(Mar.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Mod.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Plac.Text.Trim(), @"^[a-zA-Z\s]+$"))
             {
-                tisa.Marca = Mar.Text;
-                tisa.Modelo = Mod.Text;
-                tisa.Placa = Plac.Text;
+                Mibd db = new Mibd();
+                int id = int.Parse(IdAU.Text);
+                var tisa = db.Auts
+                          .SingleOrDefault(x => x.IDAuto == id);
+                // where x.id == id
+                //select x;
 
-                db.SaveChanges();
+                if (tisa != null)
+                {
+                    tisa.Marca = Mar.Text;
+                    tisa.Modelo = Mod.Text;
+                    tisa.Placa = Plac.Text;
+
+                    db.SaveChanges();
+                }
             }
+            else { MessageBox.Show("Solo numeros #id"); }
+            
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Mibd db = new Mibd();
+            if (Regex.IsMatch(IdAU.Text, @"^\d+$") && Regex.IsMatch(Mar.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Mod.Text.Trim(), @"^[a-zA-Z\s]+$") && Regex.IsMatch(Plac.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                Mibd db = new Mibd();
 
-            int id = Convert.ToInt32(IdAU.Text);
+                int id = Convert.ToInt32(IdAU.Text);
 
-            var cons = from s in db.Auts
+                var cons = from s in db.Auts
 
-                       where s.IDAuto == id
-                       select s;
+                           where s.IDAuto == id
+                           select s;
 
-            DataAu.ItemsSource = db.Auts.ToList();
+                DataAu.ItemsSource = db.Auts.ToList();
 
-            var cons1 = db.Auts.SingleOrDefault(s => s.IDAuto == id);
-            Mar.Text = cons1.Marca;
-            Mod.Text = cons1.Modelo;
-            Plac.Text = cons1.Placa;
+                var cons1 = db.Auts.SingleOrDefault(s => s.IDAuto == id);
+                Mar.Text = cons1.Marca;
+                Mod.Text = cons1.Modelo;
+                Plac.Text = cons1.Placa;
+            }
+            else { MessageBox.Show("Ingrese solo Numero de ID"); }
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
